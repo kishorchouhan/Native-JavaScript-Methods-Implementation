@@ -2,11 +2,10 @@
 
 /*****************NATIVE MAP*************************/
 
-Array.prototype.myMap = function(callback) {
+Array.prototype.myMap = function(callback, thisArg) {
   let arr = [];
   for (let i = 0; i < this.length; i++) {
-    let result = callback(this[i], i, this);
-    arr.push(result);
+    arr.push(callback.call(thisArg, this[i], i, this));
   }
   return arr;
 };
