@@ -6,6 +6,7 @@ Array.prototype.myForEach = function(callback) {
   for (var i = 0; i < this.length; i++) {
     if (i in this)
       // since each array element's index is a property of the array
+      // can also be used: if (Object.hasOwnProperty.call(this, i))
       callback(this[i], i, this);
   }
 };
