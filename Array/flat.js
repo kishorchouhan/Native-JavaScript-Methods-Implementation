@@ -3,38 +3,52 @@
 /***************** NATIVE FLAT *************************/
 
 Array.prototype.myFlat = function(depth) {
+  if (depth === undefined) {
+    depth = 1;
+  }
+
   let result = [];
-  depth = depth ? depth : 1;
 
   for (let i = 0; i < this.length; i++) {
-    if (Array.isArray(this[i]) && depth) {
-      let arr = this[i];
-      for (let i = 0; i < arr.length; i++) {
-        result.push(arr[i]);
+    if (Array.isArray(this[i]) && depth > 0) {
+      --depth;
+
+      let arr = this[i].myFlat(depth);
+
+      for (let j = 0; j < arr.length; j++) {
+        if (arr[j] !== undefined) {
+          result.push(arr[j]);
+        }
       }
-      depth -= 1;
+    } else if (this[i] !== undefined) {
+      result.push(this[i]);
     }
-    result.push(this[i]);
   }
+
   return result;
 };
 
 // Test#1:
 var arr1 = [1, 2, [3, 4]];
-console.log(arr1.myFlat());
+console.log("Result#1: ", arr1.myFlat());
 // [1, 2, 3, 4]
 
 // Test#2:
 var arr2 = [1, 2, [3, 4, [5, 6]]];
-console.log(arr2.myFlat());
+console.log("Result#2: ", arr2.myFlat());
 // [1, 2, 3, 4, [5, 6]]
 
 // Test#3:
 var arr3 = [1, 2, [3, 4, [5, 6]]];
-console.log(arr3.myFlat(2));
+console.log("Result#3: ", arr3.myFlat(2));
 // [1, 2, 3, 4, 5, 6]
 
 // Test#4:
 var arr4 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
-console.log(arr4.myFlat(Infinity));
+console.log("Result#4: ", arr4.myFlat(Infinity));
 // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// Test#5:
+var arr5 = [1, 2, , 4, 5];
+console.log("Result#5: ", arr5.flat());
+// [1, 2, 4, 5]
