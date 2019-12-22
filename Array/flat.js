@@ -16,11 +16,11 @@ Array.prototype.myFlat = function(depth) {
       let arr = this[i].myFlat(depth);
 
       for (let j = 0; j < arr.length; j++) {
-        if (arr[j] !== undefined) {
+        if (j in arr) {
           result.push(arr[j]);
         }
       }
-    } else if (this[i] !== undefined) {
+    } else if (i in this) {
       result.push(this[i]);
     }
   }
@@ -49,6 +49,6 @@ console.log("Result#4: ", arr4.myFlat(Infinity));
 // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // Test#5:
-var arr5 = [1, 2, , 4, 5];
+var arr5 = [1, 2, , 4, 5, undefined];
 console.log("Result#5: ", arr5.flat());
-// [1, 2, 4, 5]
+// [1, 2, 4, 5, undefined]
