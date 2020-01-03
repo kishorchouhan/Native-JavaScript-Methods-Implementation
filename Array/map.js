@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /*****************NATIVE MAP*************************/
 
@@ -11,7 +11,7 @@ Array.prototype.myMap = function(callback, thisArg) {
 };
 
 //tests
-var arr = ["abc", "def", "ghi"];
+var arr = ['abc', 'def', 'ghi'];
 var numbers = [16, 25, 36];
 
 var goodT = arr.myMap(function(n) {

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /*****************NATIVE REDUCE*************************/
 
@@ -7,9 +7,9 @@ Array.prototype.myReduce = function(callback, initialValue) {
   let i = 0;
 
   // Initial value check
-  if (typeof initialValue === "undefined") {
+  if (typeof initialValue === 'undefined') {
     if (this.length === 0) {
-      throw new TypeError("reduce on empty array without initial value");
+      throw new TypeError('reduce on empty array without initial value');
     }
     [accumulator] = this;
     i = 1;
@@ -47,4 +47,4 @@ var flattened = [
 console.log(flattened); //[ 0, 1, 2, 3, 4, 5 ]
 
 // Test#4
-[undefined, null, "3", 4, 5].myReduce((acc, cur) => acc * cur); // NaN
+[undefined, null, '3', 4, 5].myReduce((acc, cur) => acc * cur); // NaN

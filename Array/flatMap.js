@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /*****************NATIVE FLATMAP*************************/
 
@@ -29,23 +29,23 @@ Array.prototype.myFlatMap = function(callback, thisArg) {
 let arr1 = [1, 2, 3, 4];
 
 console.log(
-  "Result#1.1: ",
+  'Result#1.1: ',
   arr1.myFlatMap(x => [x * 2])
 );
 // [2, 4, 6, 8]
 
 // only one level is flattened
 console.log(
-  "Result#1.2: ",
+  'Result#1.2: ',
   arr1.myFlatMap(x => [[x * 2]])
 );
 // [[2], [4], [6], [8]]
 
 // Test#2
-let arr2 = ["it's Sunny in", "", "California"];
+let arr2 = ["it's Sunny in", '', 'California'];
 
 console.log(
-  "Result#2: ",
-  arr2.myFlatMap(x => x.split(" "))
+  'Result#2: ',
+  arr2.myFlatMap(x => x.split(' '))
 );
 // ["it's","Sunny","in", "", "California"]

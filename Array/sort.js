@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /***************** NATIVE SORT *************************/
 
@@ -105,7 +105,7 @@ console.log([100, 10, 1].mySort());
 // [1,10,100]
 
 // 'If character codes are equal but values are different, sort based on value from least to greatest. String.':
-console.log(["abcde", "abcd", "abc"].mySort());
+console.log(['abcde', 'abcd', 'abc'].mySort());
 // ["abc", "abcd", "abcde"]
 
 // 'It should accept an optional compareFunction. If positive, greatest to least.':
@@ -126,12 +126,12 @@ console.log(
 
 // 'Objects can be sorted, given the value of one of their properties. Test for numeric.':
 var items = [
-  { name: "Edward", value: 21 },
-  { name: "Sharpe", value: 37 },
-  { name: "And", value: 45 },
-  { name: "The", value: -12 },
-  { name: "Magnetic", value: 13 },
-  { name: "Zeros", value: 37 }
+  { name: 'Edward', value: 21 },
+  { name: 'Sharpe', value: 37 },
+  { name: 'And', value: 45 },
+  { name: 'The', value: -12 },
+  { name: 'Magnetic', value: 13 },
+  { name: 'Zeros', value: 37 }
 ];
 // sort by value
 console.log(
@@ -163,12 +163,12 @@ console.log(
 
 // 'Objects can be sorted, given the value of one of their properties. Test for strings.':
 var items = [
-  { name: "Edward", value: 21 },
-  { name: "Sharpe", value: 37 },
-  { name: "And", value: 45 },
-  { name: "The", value: -12 },
-  { name: "Magnetic", value: 13 },
-  { name: "Zeros", value: 37 }
+  { name: 'Edward', value: 21 },
+  { name: 'Sharpe', value: 37 },
+  { name: 'And', value: 45 },
+  { name: 'The', value: -12 },
+  { name: 'Magnetic', value: 13 },
+  { name: 'Zeros', value: 37 }
 ];
 console.log(
   items.mySort(function(a, b) {
@@ -207,7 +207,7 @@ console.log(
 */
 
 // 'If no compare function is provided, it should sort null after strings/numbers.':
-console.log([null, 1, "hi"].mySort());
+console.log([null, 1, 'hi'].mySort());
 // [1, "hi", null]
 
 // 'Edge case':
