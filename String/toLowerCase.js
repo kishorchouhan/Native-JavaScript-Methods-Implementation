@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /*****************NATIVE toLowerCase*************/
 
@@ -12,7 +12,7 @@
 */
 
 String.prototype.myToLowerCase = function() {
-  let result = "";
+  let result = '';
   for (let i = 0; i < this.length; i++) {
     const character = this[i];
     const characterCode = character.charCodeAt();
