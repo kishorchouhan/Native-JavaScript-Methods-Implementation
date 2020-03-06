@@ -22,3 +22,20 @@ Array.prototype.myShift = function() {
   this.length--;
   return returnValue;
 };
+
+// Tests:
+
+var arr1 = [1, 3];
+var arr2 = [1];
+var arr3 = [];
+var operatingSystems = ['Windows 98', 'Windows XP', 'OSX 10.1'];
+
+var op1 = arr1.myShift();
+var op2 = arr2.myShift();
+var op3 = arr3.myShift();
+var op4 = operatingSystems.myShift();
+
+console.log(op1, arr1);
+console.log(op2, arr2);
+console.log(op3, arr3);
+console.log(op4, operatingSystems);
