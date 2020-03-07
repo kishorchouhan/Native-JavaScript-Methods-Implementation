@@ -15,7 +15,7 @@ Array.prototype.myShift = function() {
     return undefined;
   }
   var returnValue = this[0];
-  var thisValue = this;
+  var thisValue = [...this];
   for (let i = 1; i < this.length; i++) {
     this[i - 1] = thisValue[i];
   }
