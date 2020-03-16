@@ -1,6 +1,7 @@
 'use strict';
 
 /*****************Object.is()*************************/
+
 // The Object.is() method determines whether two values are the same value.
 
 /* 
